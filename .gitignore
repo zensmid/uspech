@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# video pesado: va a Supabase Storage/CDN en producción, no se versiona en git
+# (ver ASSETS.md — se queda local en public/assets/video para desarrollo)
+public/assets/video/*.mp4
+public/assets/video/*.mov
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

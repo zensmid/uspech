@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens. --color-accent está extraído directamente del logo
+ * oficial (logo uspech 2022.png, rojo #DA0100) — ver ASSETS.md.
+ * Base e ink siguen siendo la propuesta de blanco hueso / casi negro
+ * hasta tener una guía de marca completa.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-base: #faf9f6;
+  --color-base-raised: #f1efe9;
+  --color-ink: #121212;
+  --color-ink-soft: rgb(18 18 18 / 0.7);
+  --color-ink-faint: rgb(18 18 18 / 0.4);
+  --color-ink-line: rgb(18 18 18 / 0.12);
+  --color-accent: #da0100;
+  --color-accent-dark: #ae0100;
+  --color-accent-ink: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-base: var(--color-base);
+  --color-base-raised: var(--color-base-raised);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-ink-line: var(--color-ink-line);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-accent-ink: var(--color-accent-ink);
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-base);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
