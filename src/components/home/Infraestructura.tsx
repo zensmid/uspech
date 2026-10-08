@@ -24,6 +24,7 @@ export function Infraestructura() {
                   alt={item.label}
                   caption={item.label}
                   aspect="aspect-square"
+                  fit={item.fit ?? "cover"}
                 />
               ) : (
                 <ImagePlaceholder

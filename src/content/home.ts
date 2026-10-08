@@ -27,13 +27,22 @@ export const infraestructura = {
   texto:
     "Tenemos todo el equipo para plasmar cualquier idea: plotters, CNC, carpintería, herrería e impresión de cortos tirajes sobre materiales rígidos y flexibles.",
   items: [
-    { label: "Plotters", src: "/assets/infraestructura/plotters.jpg" },
-    { label: "CNC", src: "/assets/infraestructura/cnc.jpg" },
+    {
+      label: "Plotters",
+      src: "/assets/infraestructura/polar.png",
+      fit: "contain" as const,
+    },
+    {
+      label: "CNC",
+      src: "/assets/infraestructura/router.png",
+      fit: "contain" as const,
+    },
     { label: "Carpintería", src: "/assets/infraestructura/carpinteria.jpg" },
     { label: "Herrería", src: "/assets/infraestructura/herreria.jpg" },
     {
       label: "Impresión gran formato",
-      src: "/assets/infraestructura/impresion-gran-formato.jpg",
+      src: "/assets/infraestructura/latex.png",
+      fit: "contain" as const,
     },
   ],
 };
