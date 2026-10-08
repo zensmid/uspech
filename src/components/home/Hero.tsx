@@ -31,17 +31,18 @@ export function Hero() {
 
         <FadeIn delay={0.1} className="grid grid-cols-2 gap-4">
           <PhotoTile
-            src="/assets/portafolio/7eleven-mundial-2018.jpg"
-            alt="Activación 7-Eleven, Mundial Rusia 2018"
-            caption="7-Eleven — Mundial 2018"
+            src="/assets/portafolio/farmatodo-maraton-cdmx.jpg"
+            alt="Stand de Farmatodo con promotoras en el maratón de la Ciudad de México"
+            caption="Farmatodo — Maratón CDMX"
             aspect="aspect-[3/4]"
             className="col-span-1"
             priority
           />
           <div className="col-span-1 grid gap-4">
             <PhotoTile
-              src="/assets/infraestructura/printer-flatbed.jpg"
-              alt="Impresora de gran formato Üspech en el taller de Fasterprint"
+              src="/assets/portafolio/medtronic-stand.jpg"
+              alt="Stand de Medtronic en ExpoMED"
+              caption="Medtronic"
               aspect="aspect-square"
             />
             <PhotoTile

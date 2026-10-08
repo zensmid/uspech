@@ -30,10 +30,10 @@ placeholder `#D7263D`). Token `--color-accent` en `src/app/globals.css`.
 
 | Archivo | Estado | Uso |
 |---|---|---|
-| `plotters.jpg` | ✅ Recortado del póster de equipo Fasterprint | Galería de infraestructura (usado) |
-| `cnc.jpg` | ✅ Recortado del póster de equipo Fasterprint | Galería de infraestructura (usado) |
-| `impresion-gran-formato.jpg` | ✅ Recortado del póster de equipo Fasterprint | Galería de infraestructura + Hero (usado) |
-| `printer-flatbed.jpg` | ✅ Recortado del póster de equipo Fasterprint | Hero (usado) |
+| `plotters.jpg` | ✅ Recortado del póster de equipo Fasterprint (en blanco y negro) | Disponible, sin usar — reemplazado en la galería de infraestructura por `polar.png` (foto de producto a color) |
+| `cnc.jpg` | ✅ Recortado del póster de equipo Fasterprint (en blanco y negro) | Disponible, sin usar — reemplazado en la galería de infraestructura por `router.png` (foto de producto a color) |
+| `impresion-gran-formato.jpg` | ✅ Recortado del póster de equipo Fasterprint (en blanco y negro) | Disponible, sin usar — reemplazado en la galería de infraestructura por `latex.png` (foto de producto a color) |
+| `printer-flatbed.jpg` | ✅ Recortado del póster de equipo Fasterprint (en blanco y negro) | Disponible, sin usar — reemplazado en el Hero de Inicio por `../portafolio/medtronic-stand.jpg` (foto de producto a color) |
 | `carpinteria.jpg` | ✅ Foto real (stand TAPVS en CNC/MDF) | Galería de infraestructura (usado) |
 | `herreria.jpg` | ⚠️ Foto de stock libre de derechos (Pexels License, uso comercial permitido, sin atribución requerida) — **no es trabajo real de Uspech**, es ilustrativa | Galería de infraestructura (usado) — reemplazar en cuanto haya foto real del taller |
 | `solucion-360.jpg` | **[PENDIENTE]** | Sección "Solución 360°" (sigue como placeholder) |
@@ -50,9 +50,11 @@ destacado") y en las páginas `/servicios/btl-eventos`, `/servicios/ceal`:
 | `ducati-launch-2016.jpg` | Ducati México — lanzamiento de producto en escenario | Portafolio destacado + `/servicios/btl-eventos` |
 | `cemefi-gala-2018.jpg` | Cemefi — escenario gala 2018 | Portafolio destacado + `/servicios/btl-eventos` |
 | `medtronic-booth.jpg` | Medtronic — stand en ExpoMED | Portafolio destacado + `/servicios/btl-eventos` |
-| `7eleven-mundial-2018.jpg` | 7-Eleven — activación Mundial Rusia 2018 | Hero + `/servicios/btl-eventos` |
+| `medtronic-stand.jpg` | Medtronic — stand en ExpoMED (foto adicional, misma sede que `medtronic-booth.jpg`) | Hero de Inicio |
+| `7eleven-mundial-2018.jpg` | 7-Eleven — activación Mundial Rusia 2018 | `/servicios/btl-eventos` |
 | `icyhot-activacion.jpg` | IcyHot — activación urbana "Mi Reto Soy Yo" | `/servicios/btl-eventos` |
-| `farmatodo-maraton.jpg` | Farmatodo — módulo de recuperación en maratón | Hero + `/servicios/btl-eventos` |
+| `farmatodo-maraton.jpg` | Farmatodo — módulo de recuperación en maratón | `/servicios/btl-eventos` |
+| `farmatodo-maraton-cdmx.jpg` | Farmatodo — activación con promotoras en el maratón CDMX | Hero de Inicio |
 | `f1-modulo.jpg` | Fórmula 1 — módulo de información Gran Premio de México | `/servicios/btl-eventos` |
 | `meisa-stand.jpg` | MEISA/ViscoTec/Leybold — stand de exhibición | Portafolio destacado + `/servicios/btl-eventos` |
 | `ducati-del-mar-al-cielo.jpg` | Ducati México — tour "Del Mar al Cielo" 2017 | `/servicios/btl-eventos` |
