@@ -82,7 +82,11 @@ export default function ContactoPage() {
                 <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-ink-soft">
                   Teléfono
                 </p>
-                <p className="mt-2 text-ink-faint">[PENDIENTE]</p>
+                <p className="mt-2 text-ink-faint">
+                  <a href="tel:+525579062460" className="hover:text-ink">
+                    55 7906 2460
+                  </a>
+                </p>
               </div>
             </FadeIn>
           </div>
