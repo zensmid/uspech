@@ -3,12 +3,21 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SpinningMark } from "@/components/ui/SpinningMark";
+import { Blob } from "@/components/ui/Blob";
 
 export function CTAFinal() {
   return (
     <section className="py-16 sm:py-24">
       <Container>
         <FadeIn className="relative overflow-hidden rounded-3xl bg-accent px-8 py-14 text-center text-accent-ink sm:px-16">
+          <Blob
+            color="rgb(0 0 0 / 0.25)"
+            size={420}
+            duration={13}
+            moveX={60}
+            moveY={-40}
+            className="-left-24 -bottom-32"
+          />
           <SpinningMark className="absolute -right-16 -top-16 h-56 w-56 text-white/15 sm:h-72 sm:w-72" />
           <SpinningMark className="absolute -bottom-20 -left-16 h-56 w-56 text-white/10 sm:h-72 sm:w-72" />
           <div className="relative">
