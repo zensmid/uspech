@@ -24,7 +24,7 @@ export type Division = {
   galeria?: GaleriaItem[];
   video?: { src: string; alt: string };
   /** Catálogos en PDF descargables (ver ASSETS.md — pesados, no se versionan en git). */
-  descargas?: { titulo: string; descripcion: string; src: string }[];
+  descargas?: { titulo: string; descripcion: string; src: string; preview?: string }[];
 };
 
 /**
@@ -272,91 +272,109 @@ export const divisiones: Division[] = [
         titulo: "Catálogo general 2025-2026",
         descripcion: "El catálogo completo de artículos promocionales CEAL.",
         src: "/assets/pdf/catalogo-ceal.pdf",
+        preview: "/assets/pdf/previews/catalogo-ceal.png",
       },
       {
         titulo: "Bolígrafos de plástico",
         descripcion: "Bolígrafos promocionales en plástico, listos para personalizar.",
         src: "/assets/pdf/ceal/boligrafos-plastico.pdf",
+        preview: "/assets/pdf/previews/boligrafos-plastico.png",
       },
       {
         titulo: "Bolígrafos metálicos",
         descripcion: "Bolígrafos promocionales en metal, acabados premium.",
         src: "/assets/pdf/ceal/boligrafos-metalicos.pdf",
+        preview: "/assets/pdf/previews/boligrafos-metalicos.png",
       },
       {
         titulo: "Bolígrafos multifuncionales",
         descripcion: "Bolígrafos con funciones adicionales: stylus, USB, nivel, etc.",
         src: "/assets/pdf/ceal/boligrafos-multifuncionales.pdf",
+        preview: "/assets/pdf/previews/boligrafos-multifuncionales.png",
       },
       {
         titulo: "Oficina",
         descripcion: "Artículos de escritorio y oficina personalizables.",
         src: "/assets/pdf/ceal/oficina.pdf",
+        preview: "/assets/pdf/previews/oficina.png",
       },
       {
         titulo: "Hogar",
         descripcion: "Artículos promocionales para el hogar.",
         src: "/assets/pdf/ceal/hogar.pdf",
+        preview: "/assets/pdf/previews/hogar.png",
       },
       {
         titulo: "Bebidas",
         descripcion: "Termos, vasos y artículos para bebidas personalizados.",
         src: "/assets/pdf/ceal/bebidas.pdf",
+        preview: "/assets/pdf/previews/bebidas.png",
       },
       {
         titulo: "Llaveros",
         descripcion: "Llaveros promocionales en distintos materiales y formas.",
         src: "/assets/pdf/ceal/llaveros.pdf",
+        preview: "/assets/pdf/previews/llaveros.png",
       },
       {
         titulo: "Textil",
         descripcion: "Playeras, gorras y otros artículos textiles personalizables.",
         src: "/assets/pdf/ceal/textil.pdf",
+        preview: "/assets/pdf/previews/textil.png",
       },
       {
         titulo: "Tiempo libre",
         descripcion: "Artículos promocionales para deporte y tiempo libre.",
         src: "/assets/pdf/ceal/tiempo-libre.pdf",
+        preview: "/assets/pdf/previews/tiempo-libre.png",
       },
       {
         titulo: "Herramientas",
         descripcion: "Herramientas y kits promocionales.",
         src: "/assets/pdf/ceal/herramientas.pdf",
+        preview: "/assets/pdf/previews/herramientas.png",
       },
       {
         titulo: "Ecológicos",
         descripcion: "Artículos promocionales fabricados con materiales sustentables.",
         src: "/assets/pdf/ceal/ecologicos.pdf",
+        preview: "/assets/pdf/previews/ecologicos.png",
       },
       {
         titulo: "Arte",
         descripcion: "Artículos promocionales relacionados con arte y manualidades.",
         src: "/assets/pdf/ceal/arte.pdf",
+        preview: "/assets/pdf/previews/arte.png",
       },
       {
         titulo: "Mundial",
         descripcion: "Línea de artículos promocionales con temática mundialista.",
         src: "/assets/pdf/ceal/mundial.pdf",
+        preview: "/assets/pdf/previews/mundial.png",
       },
       {
         titulo: "BIC",
         descripcion: "Catálogo de la marca BIC.",
         src: "/assets/pdf/ceal/bic.pdf",
+        preview: "/assets/pdf/previews/bic.png",
       },
       {
         titulo: "Columbia",
         descripcion: "Catálogo de la marca Columbia.",
         src: "/assets/pdf/ceal/columbia.pdf",
+        preview: "/assets/pdf/previews/columbia.png",
       },
       {
         titulo: "FROC",
         descripcion: "Catálogo de la marca FROC.",
         src: "/assets/pdf/ceal/froc.pdf",
+        preview: "/assets/pdf/previews/froc.png",
       },
       {
         titulo: "Targus",
         descripcion: "Catálogo de la marca Targus.",
         src: "/assets/pdf/ceal/targus.pdf",
+        preview: "/assets/pdf/previews/targus.png",
       },
     ],
   },

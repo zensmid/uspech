@@ -159,6 +159,11 @@ catálogos de marca `bic.pdf`, `columbia.pdf`, `froc.pdf`, `targus.pdf`.
 Se descartaron dos duplicados exactos de la carpeta original (`Oficina
 (1).pdf` y `Catálogo 2025-2026 (1).pdf`).
 
+**Vistas previas** (`pdf/previews/`): una imagen PNG por catálogo (portada o
+primera página, generada automáticamente con QuickLook a partir de cada PDF)
+para mostrar en la tarjeta antes de descargar. Estas sí se versionan en git
+— pesan ~5MB en total, nada que ver con los PDF originales.
+
 **Importante:** entre el catálogo general y los 17 catálogos por categoría
 suman ~450MB (el catálogo general por sí solo pesa 120MB, por encima del
 límite de 100MB por archivo de GitHub) — **no se suben a git** (ver
