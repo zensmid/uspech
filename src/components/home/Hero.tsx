@@ -46,9 +46,9 @@ export function Hero() {
               aspect="aspect-square"
             />
             <PhotoTile
-              src="/assets/portafolio/farmatodo-maraton.jpg"
-              alt="Activación Farmatodo en maratón"
-              caption="Farmatodo"
+              src="/assets/portafolio/icyhot-mi-reto-soy-yo.jpg"
+              alt="Unidad móvil de IcyHot, activación &ldquo;Mi Reto Soy Yo&rdquo;"
+              caption="IcyHot — Mi Reto Soy Yo"
               aspect="aspect-square"
             />
           </div>

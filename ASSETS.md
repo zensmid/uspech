@@ -55,6 +55,7 @@ destacado") y en las páginas `/servicios/btl-eventos`, `/servicios/ceal`:
 | `icyhot-activacion.jpg` | IcyHot — activación urbana "Mi Reto Soy Yo" | `/servicios/btl-eventos` |
 | `farmatodo-maraton.jpg` | Farmatodo — módulo de recuperación en maratón | `/servicios/btl-eventos` |
 | `farmatodo-maraton-cdmx.jpg` | Farmatodo — activación con promotoras en el maratón CDMX | Hero de Inicio |
+| `icyhot-mi-reto-soy-yo.jpg` | IcyHot — unidad móvil "Mi Reto Soy Yo" (foto adicional a `icyhot-activacion.jpg`) | Hero de Inicio |
 | `f1-modulo.jpg` | Fórmula 1 — módulo de información Gran Premio de México | `/servicios/btl-eventos` |
 | `meisa-stand.jpg` | MEISA/ViscoTec/Leybold — stand de exhibición | Portafolio destacado + `/servicios/btl-eventos` |
 | `ducati-del-mar-al-cielo.jpg` | Ducati México — tour "Del Mar al Cielo" 2017 | `/servicios/btl-eventos` |
