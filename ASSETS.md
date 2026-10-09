@@ -11,7 +11,7 @@ la ruta esperada directamente en pantalla.
 |---|---|---|
 | `uspech-logo-2022.png` | ✅ Recibido (`logo uspech 2022.png`, 1797×747, fondo transparente) | Header (usado) |
 | `uspech-logo-blanco.svg` | **[PENDIENTE]** | Footer (fondo oscuro `bg-ink`) — el logo actual es negro/rojo y no se lee sobre fondo oscuro, así que el footer sigue con el wordmark de texto mientras llega esta versión |
-| `uspech-isotipo.svg` | **[PENDIENTE]** | Favicon / redes (el favicon sigue siendo el default de Next.js) |
+| `uspech-isotipo.png` | ✅ Isotipo generado con IA (monograma "U" a mano alzada, rojo/blanco sobre negro, estilo coherente con el wordmark real) | Favicon (`src/app/icon.png`) + marca decorativa `SpinningMark` en el CTA final (usado) |
 | `uspech-logo-2022.svg` | **[PENDIENTE]** (idealmente vector) | Reemplazar el PNG por vector cuando esté disponible, para que escale sin pérdida |
 
 **Color de acento actualizado desde el logo real:** rojo `#DA0100` (antes
@@ -37,6 +37,14 @@ placeholder `#D7263D`). Token `--color-accent` en `src/app/globals.css`.
 | `carpinteria.jpg` | ✅ Foto real (stand TAPVS en CNC/MDF) | Galería de infraestructura (usado) |
 | `herreria.jpg` | ⚠️ Foto de stock libre de derechos (Pexels License, uso comercial permitido, sin atribución requerida) — **no es trabajo real de Uspech**, es ilustrativa | Galería de infraestructura (usado) — reemplazar en cuanto haya foto real del taller |
 | `solucion-360.jpg` | ✅ Ilustración conceptual generada con IA (corte isométrico de un taller donde diseño, CNC, impresión, herrería, carpintería y montaje de stand ocurren bajo un mismo techo, conectados por un hilo de luz roja — representa "todo se produce internamente") | Sección "Solución 360°" de Inicio (usado) |
+
+## Decorativo (`/public/assets/decorativo/`)
+
+| Archivo | Estado | Uso |
+|---|---|---|
+| `hero-flow.jpg` | ✅ Forma abstracta generada con IA (trazo fluido rojo/negro que se desvanece sobre fondo crema, sin texto) | Fondo decorativo del Hero de Inicio, con animación de flotación sutil (`FloatingShape`, usado) |
+
+**Motion graphics (código, sin archivos):** `SpinningMark` (SVG propio, anillo + "U" que gira lento) en el CTA final; `AnimatedUnderline` (SVG propio, trazo que se dibuja al hacer scroll) bajo cada título de sección; hover con lift + zoom en tarjetas de división y fotos; micro-interacciones de escala en botones. Todo respeta `prefers-reduced-motion`.
 
 ## Portafolio (`/public/assets/portafolio/`)
 

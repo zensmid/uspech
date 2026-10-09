@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { type ReactNode } from "react";
 
 type Variant = "primary" | "secondary" | "ghost";
@@ -15,6 +18,8 @@ export const buttonVariantClasses: Record<Variant, string> = {
 export const buttonBaseClasses =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200";
 
+const MotionLink = motion.create(Link);
+
 export function Button({
   href,
   variant = "primary",
@@ -29,13 +34,16 @@ export function Button({
   target?: string;
 }) {
   return (
-    <Link
+    <MotionLink
       href={href}
       target={target}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}
       className={`${buttonBaseClasses} ${buttonVariantClasses[variant]} ${className}`}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
     >
       {children}
-    </Link>
+    </MotionLink>
   );
 }

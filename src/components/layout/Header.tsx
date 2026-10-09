@@ -14,7 +14,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-ink-line bg-base/90 backdrop-blur">
       <Container className="flex items-center justify-between py-3">
-        <Link href="/" className="shrink-0">
+        <Link
+          href="/"
+          className="shrink-0 transition-transform duration-300 hover:scale-[1.03]"
+        >
           <Image
             src="/assets/logo/uspech-logo-2022.png"
             alt="Uspech — Agencia de Publicidad 360°"

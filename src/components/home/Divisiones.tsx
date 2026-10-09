@@ -1,10 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { divisiones } from "@/content/divisiones";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { PhotoTile } from "@/components/ui/PhotoTile";
 import { FadeIn } from "@/components/ui/FadeIn";
+
+const MotionLink = motion.create(Link);
 
 export function Divisiones() {
   return (
@@ -18,9 +23,11 @@ export function Divisiones() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {divisiones.map((division, index) => (
             <FadeIn key={division.slug} delay={index * 0.05}>
-              <Link
+              <MotionLink
                 href={`/servicios/${division.slug}`}
-                className="group block rounded-2xl border border-ink-line p-6 transition hover:border-ink"
+                className="group block rounded-2xl border border-ink-line p-6"
+                whileHover={{ y: -6, boxShadow: "0 16px 32px -16px rgb(18 18 18 / 0.25)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 24 }}
               >
                 {division.cardImage ? (
                   <PhotoTile
@@ -43,10 +50,13 @@ export function Divisiones() {
                   />
                 )}
                 <p className="mt-4 text-base text-ink-soft">{division.resumen}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:underline">
-                  Ver división →
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                  Ver división
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </span>
-              </Link>
+              </MotionLink>
             </FadeIn>
           ))}
         </div>

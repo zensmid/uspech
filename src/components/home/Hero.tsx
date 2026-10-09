@@ -3,11 +3,16 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PhotoTile } from "@/components/ui/PhotoTile";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { FloatingShape } from "@/components/ui/FloatingShape";
 
 export function Hero() {
   return (
-    <section className="pt-10 sm:pt-16">
-      <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <section className="relative overflow-hidden pt-10 sm:pt-16">
+      <FloatingShape
+        src="/assets/decorativo/hero-flow.jpg"
+        className="-right-24 -top-24 hidden h-[560px] w-[760px] opacity-60 mix-blend-multiply md:block lg:-right-32 lg:-top-16"
+      />
+      <Container className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
         <FadeIn>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
             {hero.subtitulo}
