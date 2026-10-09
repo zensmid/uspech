@@ -247,24 +247,24 @@ export const divisiones: Division[] = [
     heroAlt: "Vasos promocionales personalizados para 7-Eleven",
     galeria: [
       {
-        src: "/assets/portafolio/ceal-usb-catalogo.jpg",
-        alt: "Catálogo de memorias USB personalizadas",
-        caption: "USB personalizadas",
+        src: "/assets/portafolio/ceal-termo-grupo-ras.jpg",
+        alt: "Termos personalizados grabados para Grupo RAS",
+        caption: "Grupo RAS — Termos grabados",
       },
       {
-        src: "/assets/portafolio/ceal-usb-variedad.jpg",
-        alt: "Variedad de memorias USB con forma personalizada",
-        caption: "Formas a medida",
+        src: "/assets/portafolio/ceal-caja-navidad-suhissa.jpg",
+        alt: "Caja de regalo navideña personalizada para Suhissa",
+        caption: "Suhissa — Caja navideña",
       },
       {
-        src: "/assets/portafolio/ceal-termos.jpg",
-        alt: "Termos y vasos térmicos personalizados",
-        caption: "Termos y vasos térmicos",
+        src: "/assets/portafolio/ceal-usb-pata-alphaed.jpg",
+        alt: "Memoria USB con forma personalizada de pata para AlphaEd",
+        caption: "AlphaEd — USB forma personalizada",
       },
       {
-        src: "/assets/portafolio/ferromex-usb.jpg",
-        alt: "USB promocional con forma de locomotora Ferromex",
-        caption: "Ferromex — USB a medida",
+        src: "/assets/portafolio/ceal-vasos-suhissa.jpg",
+        alt: "Vasos personalizados con nombres para la posada de Suhissa",
+        caption: "Suhissa — Vasos personalizados",
       },
     ],
     descargas: [
