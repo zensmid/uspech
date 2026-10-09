@@ -23,8 +23,8 @@ placeholder `#D7263D`). Token `--color-accent` en `src/app/globals.css`.
 |---|---|---|
 | `fasterprint-logo.png` | ✅ Recibido (`logo fasterprint.png`, fondo transparente) | Tarjeta de división en Inicio + hero de `/servicios/fasterprint` (usado) |
 | `ceal-logo.png` | ✅ Recibido (`Logo oficial ceal.jpg`) y fondo blanco quitado con flood-fill → PNG transparente | Tarjeta de división en Inicio + hero de `/servicios/ceal` (usado) |
-| `btl-eventos-logo.svg` | **[PENDIENTE]** | Tarjeta de división + header |
-| `marketing-digital-logo.svg` | **[PENDIENTE]** | Tarjeta de división + header |
+| `btl-eventos-logo.svg` | **[PENDIENTE]** (la tarjeta de Inicio usa en su lugar la foto `../portafolio/backstage-eventos.jpg`, ver tabla de Portafolio) | Header |
+| `marketing-digital-logo.svg` | **[PENDIENTE]** (la tarjeta de Inicio usa en su lugar el wordmark `../logo/uspech-logo-2022.png`, mientras no haya logo propio de la división) | Header |
 
 ## Infraestructura (`/public/assets/infraestructura/`)
 
@@ -36,7 +36,7 @@ placeholder `#D7263D`). Token `--color-accent` en `src/app/globals.css`.
 | `printer-flatbed.jpg` | ✅ Recortado del póster de equipo Fasterprint (en blanco y negro) | Disponible, sin usar — reemplazado en el Hero de Inicio por `../portafolio/medtronic-stand.jpg` (foto de producto a color) |
 | `carpinteria.jpg` | ✅ Foto real (stand TAPVS en CNC/MDF) | Galería de infraestructura (usado) |
 | `herreria.jpg` | ⚠️ Foto de stock libre de derechos (Pexels License, uso comercial permitido, sin atribución requerida) — **no es trabajo real de Uspech**, es ilustrativa | Galería de infraestructura (usado) — reemplazar en cuanto haya foto real del taller |
-| `solucion-360.jpg` | **[PENDIENTE]** | Sección "Solución 360°" (sigue como placeholder) |
+| `solucion-360.jpg` | ✅ Ilustración conceptual generada con IA (corte isométrico de un taller donde diseño, CNC, impresión, herrería, carpintería y montaje de stand ocurren bajo un mismo techo, conectados por un hilo de luz roja — representa "todo se produce internamente") | Sección "Solución 360°" de Inicio (usado) |
 
 ## Portafolio (`/public/assets/portafolio/`)
 
@@ -56,6 +56,7 @@ destacado") y en las páginas `/servicios/btl-eventos`, `/servicios/ceal`:
 | `farmatodo-maraton.jpg` | Farmatodo — módulo de recuperación en maratón | `/servicios/btl-eventos` |
 | `farmatodo-maraton-cdmx.jpg` | Farmatodo — activación con promotoras en el maratón CDMX | Hero de Inicio |
 | `icyhot-mi-reto-soy-yo.jpg` | IcyHot — unidad móvil "Mi Reto Soy Yo" (foto adicional a `icyhot-activacion.jpg`) | Hero de Inicio |
+| `backstage-eventos.jpg` | Backstage de control de sonido/proyección en un evento Uspech | Tarjeta de división "BTL y Eventos" en Inicio |
 | `f1-modulo.jpg` | Fórmula 1 — módulo de información Gran Premio de México | `/servicios/btl-eventos` |
 | `meisa-stand.jpg` | MEISA/ViscoTec/Leybold — stand de exhibición | Portafolio destacado + `/servicios/btl-eventos` |
 | `ducati-del-mar-al-cielo.jpg` | Ducati México — tour "Del Mar al Cielo" 2017 | `/servicios/btl-eventos` |

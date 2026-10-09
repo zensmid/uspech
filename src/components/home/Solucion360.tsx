@@ -1,7 +1,7 @@
 import { solucion360 } from "@/content/home";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { PhotoTile } from "@/components/ui/PhotoTile";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function Solucion360() {
@@ -14,9 +14,9 @@ export function Solucion360() {
           description={<span className="text-base/70">{solucion360.texto}</span>}
         />
         <FadeIn delay={0.1}>
-          <ImagePlaceholder
-            expectedPath="/assets/infraestructura/solucion-360.jpg"
-            label="Proceso integrado"
+          <PhotoTile
+            src="/assets/infraestructura/solucion-360.jpg"
+            alt="Ilustración de un taller integrado donde diseño, CNC, impresión, herrería, carpintería y montaje de stands ocurren bajo un mismo techo, conectados por un hilo de luz roja"
             aspect="aspect-[4/3]"
             className="bg-white/5"
           />

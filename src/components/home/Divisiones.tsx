@@ -22,7 +22,13 @@ export function Divisiones() {
                 href={`/servicios/${division.slug}`}
                 className="group block rounded-2xl border border-ink-line p-6 transition hover:border-ink"
               >
-                {division.logo ? (
+                {division.cardImage ? (
+                  <PhotoTile
+                    src={division.cardImage}
+                    alt={division.cardImageAlt ?? division.nombre}
+                    aspect="aspect-[16/7]"
+                  />
+                ) : division.logo ? (
                   <PhotoTile
                     src={division.logo}
                     alt={`Logo de ${division.nombre}`}

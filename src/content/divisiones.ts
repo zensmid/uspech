@@ -13,6 +13,9 @@ export type Division = {
   prioridad: number;
   /** Logo propio de la división, si ya se tiene (ver ASSETS.md). */
   logo?: string;
+  /** Foto real para la tarjeta de Inicio, cuando aún no hay logo propio de la división. */
+  cardImage?: string;
+  cardImageAlt?: string;
   /** Imagen de portada real para /servicios/[slug]. Si falta, la página usa un tratamiento de marca en CSS. */
   heroImage?: string;
   heroAlt?: string;
@@ -34,6 +37,8 @@ export const divisiones: Division[] = [
     descripcionCorta:
       "El servicio que más deja y el que más impulsamos: activaciones, stands y eventos producidos de principio a fin.",
     prioridad: 1,
+    cardImage: "/assets/portafolio/backstage-eventos.jpg",
+    cardImageAlt: "Backstage de control de sonido y proyección en un evento Uspech",
     heroImage: "/assets/portafolio/campus-stand-cnc.jpg",
     heroAlt: "Stand a medida construido en madera y CNC para Campus",
     galeria: [
@@ -268,5 +273,6 @@ export const divisiones: Division[] = [
     descripcionCorta:
       "Complementamos cada activación física con presencia y pauta digital. Contenido en revisión.",
     prioridad: 4,
+    logo: "/assets/logo/uspech-logo-2022.png",
   },
 ];
