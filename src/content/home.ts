@@ -47,16 +47,6 @@ export const infraestructura = {
   ],
 };
 
-export const comoTrabajamos = [
-  { paso: 1, titulo: "Contacto" },
-  { paso: 2, titulo: "Recepción de la idea" },
-  { paso: 3, titulo: "Desarrollo" },
-  { paso: 4, titulo: "Presentación" },
-  { paso: 5, titulo: "Cotización" },
-  { paso: 6, titulo: "Producción" },
-  { paso: 7, titulo: "Entrega" },
-];
-
 export const clientesDestacados = [
   "7-Eleven",
   "Sears",

@@ -74,7 +74,11 @@ export default function ContactoPage() {
                 <p className="text-sm font-semibold uppercase tracking-wide text-ink-soft">
                   Dirección y horario
                 </p>
-                <p className="mt-2 text-ink-faint">[PENDIENTE]</p>
+                <p className="mt-2 text-ink-faint">
+                  CDMX: Salaverry 1208, Zacatenco
+                  <br />
+                  Mérida: Calle 67 #334478, Dzitya
+                </p>
                 <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-ink-soft">
                   Teléfono
                 </p>
