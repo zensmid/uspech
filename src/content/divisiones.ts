@@ -23,6 +23,8 @@ export type Division = {
   heroCarousel?: { src: string; alt: string; caption?: string }[];
   galeria?: GaleriaItem[];
   video?: { src: string; alt: string };
+  /** Catálogos en PDF descargables (ver ASSETS.md — pesados, no se versionan en git). */
+  descargas?: { titulo: string; descripcion: string; src: string }[];
 };
 
 /**
@@ -263,6 +265,98 @@ export const divisiones: Division[] = [
         src: "/assets/portafolio/ferromex-usb.jpg",
         alt: "USB promocional con forma de locomotora Ferromex",
         caption: "Ferromex — USB a medida",
+      },
+    ],
+    descargas: [
+      {
+        titulo: "Catálogo general 2025-2026",
+        descripcion: "El catálogo completo de artículos promocionales CEAL.",
+        src: "/assets/pdf/catalogo-ceal.pdf",
+      },
+      {
+        titulo: "Bolígrafos de plástico",
+        descripcion: "Bolígrafos promocionales en plástico, listos para personalizar.",
+        src: "/assets/pdf/ceal/boligrafos-plastico.pdf",
+      },
+      {
+        titulo: "Bolígrafos metálicos",
+        descripcion: "Bolígrafos promocionales en metal, acabados premium.",
+        src: "/assets/pdf/ceal/boligrafos-metalicos.pdf",
+      },
+      {
+        titulo: "Bolígrafos multifuncionales",
+        descripcion: "Bolígrafos con funciones adicionales: stylus, USB, nivel, etc.",
+        src: "/assets/pdf/ceal/boligrafos-multifuncionales.pdf",
+      },
+      {
+        titulo: "Oficina",
+        descripcion: "Artículos de escritorio y oficina personalizables.",
+        src: "/assets/pdf/ceal/oficina.pdf",
+      },
+      {
+        titulo: "Hogar",
+        descripcion: "Artículos promocionales para el hogar.",
+        src: "/assets/pdf/ceal/hogar.pdf",
+      },
+      {
+        titulo: "Bebidas",
+        descripcion: "Termos, vasos y artículos para bebidas personalizados.",
+        src: "/assets/pdf/ceal/bebidas.pdf",
+      },
+      {
+        titulo: "Llaveros",
+        descripcion: "Llaveros promocionales en distintos materiales y formas.",
+        src: "/assets/pdf/ceal/llaveros.pdf",
+      },
+      {
+        titulo: "Textil",
+        descripcion: "Playeras, gorras y otros artículos textiles personalizables.",
+        src: "/assets/pdf/ceal/textil.pdf",
+      },
+      {
+        titulo: "Tiempo libre",
+        descripcion: "Artículos promocionales para deporte y tiempo libre.",
+        src: "/assets/pdf/ceal/tiempo-libre.pdf",
+      },
+      {
+        titulo: "Herramientas",
+        descripcion: "Herramientas y kits promocionales.",
+        src: "/assets/pdf/ceal/herramientas.pdf",
+      },
+      {
+        titulo: "Ecológicos",
+        descripcion: "Artículos promocionales fabricados con materiales sustentables.",
+        src: "/assets/pdf/ceal/ecologicos.pdf",
+      },
+      {
+        titulo: "Arte",
+        descripcion: "Artículos promocionales relacionados con arte y manualidades.",
+        src: "/assets/pdf/ceal/arte.pdf",
+      },
+      {
+        titulo: "Mundial",
+        descripcion: "Línea de artículos promocionales con temática mundialista.",
+        src: "/assets/pdf/ceal/mundial.pdf",
+      },
+      {
+        titulo: "BIC",
+        descripcion: "Catálogo de la marca BIC.",
+        src: "/assets/pdf/ceal/bic.pdf",
+      },
+      {
+        titulo: "Columbia",
+        descripcion: "Catálogo de la marca Columbia.",
+        src: "/assets/pdf/ceal/columbia.pdf",
+      },
+      {
+        titulo: "FROC",
+        descripcion: "Catálogo de la marca FROC.",
+        src: "/assets/pdf/ceal/froc.pdf",
+      },
+      {
+        titulo: "Targus",
+        descripcion: "Catálogo de la marca Targus.",
+        src: "/assets/pdf/ceal/targus.pdf",
       },
     ],
   },

@@ -145,10 +145,27 @@ adelante.
 
 ## PDF (`/public/assets/pdf/`)
 
-| Archivo esperado | Uso |
-|---|---|
-| `catalogo-ceal.pdf` | Descarga en `/servicios/ceal` y `/catalogo` |
-| `brochure-uspech.pdf` | Descarga general en `/catalogo` |
+| Archivo | Estado | Uso |
+|---|---|---|
+| `catalogo-ceal.pdf` | ✅ Recibido (`Catálogo 2025-2026.pdf`, carpeta "Catalogos promocionales", 120MB) | Descarga en `/servicios/ceal` y `/catalogo` |
+| `brochure-uspech.pdf` | **[PENDIENTE]** | Descarga general en `/catalogo` |
 
-**[PENDIENTE]** Ambos PDF, además de quién los actualiza mensualmente desde
-`/admin`.
+**`/servicios/ceal` — catálogos por categoría** (`pdf/ceal/`, recibidos en la
+carpeta "Catalogos promocionales"): `boligrafos-plastico.pdf`,
+`boligrafos-metalicos.pdf`, `boligrafos-multifuncionales.pdf`, `oficina.pdf`,
+`hogar.pdf`, `bebidas.pdf`, `llaveros.pdf`, `textil.pdf`, `tiempo-libre.pdf`,
+`herramientas.pdf`, `ecologicos.pdf`, `arte.pdf`, `mundial.pdf` y los
+catálogos de marca `bic.pdf`, `columbia.pdf`, `froc.pdf`, `targus.pdf`.
+Se descartaron dos duplicados exactos de la carpeta original (`Oficina
+(1).pdf` y `Catálogo 2025-2026 (1).pdf`).
+
+**Importante:** entre el catálogo general y los 17 catálogos por categoría
+suman ~450MB (el catálogo general por sí solo pesa 120MB, por encima del
+límite de 100MB por archivo de GitHub) — **no se suben a git** (ver
+`.gitignore`) y **no deben servirse directo desde `/public` en producción**:
+hay que subirlos a Supabase Storage o un CDN y referenciarlos por URL, igual
+que ya está planeado para `btl-highlights.mp4` (ver sección de Video). Quedan
+locales en el repo solo para desarrollo.
+
+**[PENDIENTE]** `brochure-uspech.pdf`, además de quién actualiza los
+catálogos mensualmente desde `/admin`.

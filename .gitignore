@@ -41,6 +41,12 @@ yarn-error.log*
 public/assets/video/*.mp4
 public/assets/video/*.mov
 
+# catálogos PDF pesados (~450MB, uno solo pesa 120MB — supera el límite de
+# GitHub de 100MB por archivo): van a Supabase Storage/CDN en producción,
+# no se versionan en git (ver ASSETS.md — se quedan local para desarrollo)
+public/assets/pdf/*.pdf
+public/assets/pdf/ceal/*.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

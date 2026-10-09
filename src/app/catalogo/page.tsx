@@ -16,7 +16,7 @@ const descargas = [
     descripcion:
       "Artículos promocionales y regalos corporativos: USB, termos, vasos y más, listos para personalizar con tu marca.",
     expectedPath: "/assets/pdf/catalogo-ceal.pdf",
-    disponible: false,
+    disponible: true,
   },
   {
     titulo: "Brochure Uspech",

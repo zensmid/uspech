@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { divisiones } from "@/content/divisiones";
 import { DivisionHero } from "@/components/servicios/DivisionHero";
 import { DivisionGaleria } from "@/components/servicios/DivisionGaleria";
+import { DivisionDescargas } from "@/components/servicios/DivisionDescargas";
 import { DivisionVideo } from "@/components/servicios/DivisionVideo";
 import { DivisionPorQueUspech } from "@/components/servicios/DivisionPorQueUspech";
 import { CTAFinal } from "@/components/home/CTAFinal";
@@ -39,6 +40,7 @@ export default async function DivisionPage({
       <DivisionHero division={division} />
       <DivisionPorQueUspech />
       {division.galeria ? <DivisionGaleria items={division.galeria} /> : null}
+      {division.descargas ? <DivisionDescargas items={division.descargas} /> : null}
       {division.video ? (
         <DivisionVideo src={division.video.src} alt={division.video.alt} />
       ) : null}
