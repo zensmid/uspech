@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useActionState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { divisiones } from "@/content/divisiones";
+import { enviarContacto, type ContactoState } from "@/app/contacto/actions";
 import { buttonBaseClasses, buttonVariantClasses } from "@/components/ui/Button";
 
 const inputClasses =
@@ -13,16 +14,24 @@ function Field({
   name,
   type = "text",
   required = false,
+  defaultValue,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  defaultValue?: string;
 }) {
   return (
     <label className="grid gap-2 text-sm font-medium text-ink">
       {label}
-      <input name={name} type={type} required={required} className={inputClasses} />
+      <input
+        name={name}
+        type={type}
+        required={required}
+        defaultValue={defaultValue}
+        className={inputClasses}
+      />
     </label>
   );
 }
@@ -45,14 +54,13 @@ function Fila({ children, className = "" }: { children: ReactNode; className?: s
 }
 
 export function ContactoForm() {
-  const [enviado, setEnviado] = useState(false);
+  const [state, formAction, pending] = useActionState<ContactoState, FormData>(
+    enviarContacto,
+    { ok: false }
+  );
+  const v = state.valores ?? {};
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setEnviado(true);
-  }
-
-  if (enviado) {
+  if (state.ok) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.92 }}
@@ -93,7 +101,7 @@ export function ContactoForm() {
 
   return (
     <motion.form
-      onSubmit={handleSubmit}
+      action={formAction}
       className="grid gap-5"
       variants={lista}
       initial="hidden"
@@ -111,18 +119,18 @@ export function ContactoForm() {
       />
 
       <Fila className="grid gap-5 sm:grid-cols-2">
-        <Field label="Nombre" name="nombre" required />
-        <Field label="Empresa" name="empresa" />
+        <Field label="Nombre" name="nombre" required defaultValue={v.nombre} />
+        <Field label="Empresa" name="empresa" defaultValue={v.empresa} />
       </Fila>
       <Fila className="grid gap-5 sm:grid-cols-2">
-        <Field label="Correo" name="correo" type="email" required />
-        <Field label="Teléfono" name="telefono" type="tel" required />
+        <Field label="Correo" name="correo" type="email" required defaultValue={v.correo} />
+        <Field label="Teléfono" name="telefono" type="tel" required defaultValue={v.telefono} />
       </Fila>
 
       <Fila>
       <label className="grid gap-2 text-sm font-medium text-ink">
         División de interés
-        <select name="division" className={inputClasses} defaultValue="">
+        <select name="division" className={inputClasses} defaultValue={v.division ?? ""}>
           <option value="" disabled>
             Selecciona una división
           </option>
@@ -138,22 +146,40 @@ export function ContactoForm() {
       <Fila>
       <label className="grid gap-2 text-sm font-medium text-ink">
         Descripción del proyecto
-        <textarea name="descripcion" rows={4} required className={inputClasses} />
+        <textarea
+          name="descripcion"
+          rows={4}
+          required
+          defaultValue={v.descripcion}
+          className={inputClasses}
+        />
       </label>
       </Fila>
 
       <Fila>
-        <Field label="Fecha deseada" name="fecha" type="date" />
+        <Field label="Fecha deseada" name="fecha" type="date" defaultValue={v.fecha} />
       </Fila>
+
+      {state.error ? (
+        <motion.p
+          role="alert"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="rounded-xl bg-accent/10 px-4 py-3 text-sm font-medium text-accent-dark"
+        >
+          {state.error}
+        </motion.p>
+      ) : null}
 
       <Fila>
         <motion.button
           type="submit"
+          disabled={pending}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
-          className={`${buttonBaseClasses} ${buttonVariantClasses.primary} mt-2 w-full sm:w-auto`}
+          className={`${buttonBaseClasses} ${buttonVariantClasses.primary} mt-2 w-full disabled:opacity-60 sm:w-auto`}
         >
-          Enviar <span aria-hidden="true">→</span>
+          {pending ? "Enviando…" : "Enviar"} <span aria-hidden="true">→</span>
         </motion.button>
       </Fila>
     </motion.form>
