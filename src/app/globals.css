@@ -32,6 +32,24 @@
   --font-sans: var(--font-inter);
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-track {
+  animation: marquee linear infinite;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-ink);
+}
+
 body {
   background: var(--color-base);
   color: var(--color-ink);

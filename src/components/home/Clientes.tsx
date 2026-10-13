@@ -1,7 +1,7 @@
 import { clientesDestacados } from "@/content/home";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { Marquee } from "@/components/ui/Marquee";
 import { Blob } from "@/components/ui/Blob";
 
 export function Clientes() {
@@ -22,16 +22,22 @@ export function Clientes() {
           align="center"
         />
 
-        <FadeIn delay={0.1} className="mt-10 flex flex-wrap justify-center gap-3">
-          {clientesDestacados.map((cliente) => (
-            <span
-              key={cliente}
-              className="rounded-full border border-ink-line px-4 py-2 text-sm text-ink-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-ink hover:shadow-md"
-            >
-              {cliente}
-            </span>
-          ))}
-        </FadeIn>
+      </Container>
+      <div className="relative mt-10 space-y-4">
+        {[clientesDestacados, [...clientesDestacados].reverse()].map((fila, n) => (
+          <Marquee key={n} reverse={n === 1} duration={45 + n * 10}>
+            {fila.map((cliente) => (
+              <span
+                key={cliente}
+                className="mx-2 whitespace-nowrap rounded-full border border-ink-line bg-base px-6 py-3 font-display text-xl uppercase"
+              >
+                {cliente}
+              </span>
+            ))}
+          </Marquee>
+        ))}
+      </div>
+      <Container className="relative">
         <p className="mt-6 text-center text-xs text-ink-faint">
           Logos reales en alta resolución: [PENDIENTE] — ver ASSETS.md
         </p>

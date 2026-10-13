@@ -69,3 +69,53 @@ export const ctaFinal = {
   texto: "Cuéntanos tu idea y te ayudamos a convertirla en una campaña exitosa.",
   ctaPrincipal: "Agenda una llamada",
 };
+
+export const marqueeServicios = [
+  "BTL",
+  "Eventos",
+  "Stands",
+  "Gran formato",
+  "Corte CNC",
+  "Carpintería",
+  "Herrería",
+  "Activaciones",
+  "Merchandising",
+  "Marketing digital",
+];
+
+export const cadenaProduccion = {
+  eyebrow: "Así producimos",
+  titulo: "De la idea al evento, todo bajo un mismo techo",
+  pasos: [
+    {
+      titulo: "Idea",
+      texto:
+        "Entendemos tu marca y tu objetivo. Aquí nace el concepto creativo de la campaña, la activación o el stand.",
+    },
+    {
+      titulo: "Diseño",
+      texto:
+        "Convertimos el concepto en planos, renders y artes finales listos para producir.",
+    },
+    {
+      titulo: "Impresión",
+      texto:
+        "Gran formato y cortos tirajes sobre materiales rígidos y flexibles, en nuestros propios plotters.",
+    },
+    {
+      titulo: "Corte CNC",
+      texto:
+        "Router y plotters de corte para dar forma exacta a cada pieza, sin depender de proveedores.",
+    },
+    {
+      titulo: "Carpintería y herrería",
+      texto:
+        "Estructuras, mobiliario y acabados hechos en nuestro taller, con control total de calidad y tiempos.",
+    },
+    {
+      titulo: "Montaje",
+      texto:
+        "Logística, instalación y operación en sitio. Entregamos el evento funcionando, de principio a fin.",
+    },
+  ],
+};

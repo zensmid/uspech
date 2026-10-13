@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { PhotoTile } from "@/components/ui/PhotoTile";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Blob } from "@/components/ui/Blob";
+import { SplitWords } from "@/components/ui/SplitWords";
 import { Parallax } from "@/components/ui/Parallax";
 
 export function Hero() {
@@ -42,7 +43,7 @@ export function Hero() {
             {hero.subtitulo}
           </p>
           <h1 className="mt-4 font-display text-4xl uppercase leading-[1.05] sm:text-6xl md:text-7xl">
-            {hero.slogan}
+            <SplitWords text={hero.slogan} delay={0.2} />
           </h1>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button href="/contacto">{hero.ctaPrincipal}</Button>
