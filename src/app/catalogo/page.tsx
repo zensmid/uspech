@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Marquee } from "@/components/ui/Marquee";
 import { DownloadCard } from "@/components/catalogo/DownloadCard";
 
 export const metadata: Metadata = {
@@ -30,6 +31,19 @@ const descargas = [
 
 export default function CatalogoPage() {
   return (
+    <>
+    <section className="overflow-hidden border-b border-ink bg-ink py-4 text-base">
+      <Marquee duration={30}>
+        {Array.from({ length: 6 }, (_, i) => (
+          <span key={i} className="flex items-center">
+            <span className="px-6 font-display text-5xl uppercase leading-none sm:text-7xl">
+              Catálogos y brochures
+            </span>
+            <span className="text-3xl text-accent">✦</span>
+          </span>
+        ))}
+      </Marquee>
+    </section>
     <section className="py-16 sm:py-24">
       <Container>
         <SectionTitle
@@ -47,5 +61,6 @@ export default function CatalogoPage() {
         </div>
       </Container>
     </section>
+    </>
   );
 }

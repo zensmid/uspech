@@ -3,6 +3,9 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
+import { Faqs } from "@/components/contacto/Faqs";
+import { Marquee } from "@/components/ui/Marquee";
+import { Tilt } from "@/components/ui/Tilt";
 import { ContactoForm } from "@/components/contacto/ContactoForm";
 import { whatsappNumero } from "@/content/home";
 
@@ -42,6 +45,18 @@ export default function ContactoPage() {
 
   return (
     <>
+      <section className="overflow-hidden border-b border-ink bg-accent py-4 text-accent-ink">
+        <Marquee duration={28}>
+          {Array.from({ length: 6 }, (_, i) => (
+            <span key={i} className="flex items-center">
+              <span className="px-6 font-display text-5xl uppercase leading-none sm:text-7xl">
+                Hablemos de tu proyecto
+              </span>
+              <span className="text-3xl">✦</span>
+            </span>
+          ))}
+        </Marquee>
+      </section>
       <section className="py-16 sm:py-24">
         <Container>
           <SectionTitle
@@ -56,6 +71,7 @@ export default function ContactoPage() {
             </FadeIn>
 
             <FadeIn delay={0.08} className="grid gap-6">
+              <Tilt>
               <div className="rounded-2xl border border-dashed border-ink-line bg-base-raised p-6">
                 <p className="text-sm font-semibold text-ink">
                   Agenda una llamada
@@ -69,7 +85,9 @@ export default function ContactoPage() {
                   Escríbenos por WhatsApp
                 </Button>
               </div>
+              </Tilt>
 
+              <Tilt>
               <div className="rounded-2xl border border-ink-line p-6">
                 <p className="text-sm font-semibold uppercase tracking-wide text-ink-soft">
                   Dirección y horario
@@ -88,6 +106,7 @@ export default function ContactoPage() {
                   </a>
                 </p>
               </div>
+              </Tilt>
             </FadeIn>
           </div>
         </Container>
@@ -100,14 +119,7 @@ export default function ContactoPage() {
             title="Antes de escribirnos"
             align="center"
           />
-          <div className="mx-auto mt-10 grid max-w-3xl gap-8">
-            {faqs.map((faq, index) => (
-              <FadeIn key={faq.pregunta} delay={index * 0.05}>
-                <h3 className="font-display text-lg uppercase">{faq.pregunta}</h3>
-                <p className="mt-2 text-ink-soft">{faq.respuesta}</p>
-              </FadeIn>
-            ))}
-          </div>
+          <Faqs items={faqs} />
         </Container>
       </section>
     </>
