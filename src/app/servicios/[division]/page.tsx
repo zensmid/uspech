@@ -6,6 +6,7 @@ import { DivisionGaleria } from "@/components/servicios/DivisionGaleria";
 import { DivisionDescargas } from "@/components/servicios/DivisionDescargas";
 import { DivisionVideo } from "@/components/servicios/DivisionVideo";
 import { DivisionPorQueUspech } from "@/components/servicios/DivisionPorQueUspech";
+import { Marquee } from "@/components/ui/Marquee";
 import { CTAFinal } from "@/components/home/CTAFinal";
 
 export function generateStaticParams() {
@@ -38,6 +39,18 @@ export default async function DivisionPage({
   return (
     <>
       <DivisionHero division={division} />
+      <section className="overflow-hidden border-b border-ink bg-ink py-4 text-base">
+        <Marquee duration={30}>
+          {Array.from({ length: 6 }, (_, i) => (
+            <span key={i} className="flex items-center">
+              <span className="px-6 font-display text-5xl uppercase leading-none sm:text-7xl">
+                {division.nombre}
+              </span>
+              <span className="text-3xl text-accent">✦</span>
+            </span>
+          ))}
+        </Marquee>
+      </section>
       <DivisionPorQueUspech />
       {division.galeria ? <DivisionGaleria items={division.galeria} /> : null}
       {division.descargas ? <DivisionDescargas items={division.descargas} /> : null}

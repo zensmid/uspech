@@ -4,6 +4,8 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { PhotoTile } from "@/components/ui/PhotoTile";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Reveal } from "@/components/ui/Reveal";
+import { Tilt } from "@/components/ui/Tilt";
 
 function slugify(text: string) {
   return text
@@ -23,12 +25,16 @@ export function DivisionGaleria({ items }: { items: GaleriaItem[] }) {
           {items.map((item, index) => (
             <FadeIn key={item.src ?? item.alt} delay={index * 0.04}>
               {item.src ? (
-                <PhotoTile
-                  src={item.src}
-                  alt={item.alt}
-                  caption={item.caption}
-                  aspect="aspect-[4/5]"
-                />
+                <Tilt>
+                  <Reveal delay={(index % 4) * 0.08}>
+                    <PhotoTile
+                      src={item.src}
+                      alt={item.alt}
+                      caption={item.caption}
+                      aspect="aspect-[4/5]"
+                    />
+                  </Reveal>
+                </Tilt>
               ) : (
                 <ImagePlaceholder
                   expectedPath={`/assets/portafolio/${slugify(item.alt)}.jpg`}

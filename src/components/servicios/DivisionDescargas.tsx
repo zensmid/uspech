@@ -3,6 +3,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/Button";
 import { PhotoTile } from "@/components/ui/PhotoTile";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Tilt } from "@/components/ui/Tilt";
 
 export function DivisionDescargas({
   items,
@@ -20,7 +21,8 @@ export function DivisionDescargas({
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (
             <FadeIn key={item.src} delay={index * 0.03}>
-              <div className="flex h-full flex-col justify-between gap-6 rounded-2xl border border-ink-line bg-base p-6">
+              <Tilt className="h-full" max={5}>
+              <div className="flex h-full flex-col justify-between gap-6 rounded-2xl border border-ink-line bg-base p-6 transition-shadow duration-300 hover:shadow-xl">
                 <div>
                   {item.preview ? (
                     <PhotoTile
@@ -37,6 +39,7 @@ export function DivisionDescargas({
                   Descargar PDF
                 </Button>
               </div>
+              </Tilt>
             </FadeIn>
           ))}
         </div>

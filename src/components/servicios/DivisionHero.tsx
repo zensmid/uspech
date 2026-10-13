@@ -3,6 +3,8 @@ import type { Division } from "@/content/divisiones";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { ParallaxBg } from "@/components/ui/ParallaxBg";
+import { SplitWords } from "@/components/ui/SplitWords";
 import { HeroCarousel } from "@/components/servicios/HeroCarousel";
 
 export function DivisionHero({ division }: { division: Division }) {
@@ -10,6 +12,7 @@ export function DivisionHero({ division }: { division: Division }) {
 
   return (
     <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-ink text-base">
+      <ParallaxBg>
       {division.heroCarousel && division.heroCarousel.length > 1 ? (
         <HeroCarousel slides={division.heroCarousel} />
       ) : division.heroImage ? (
@@ -27,6 +30,7 @@ export function DivisionHero({ division }: { division: Division }) {
           className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_38%,var(--color-accent)_38%,var(--color-accent)_42%,transparent_42%,transparent_100%),repeating-linear-gradient(90deg,rgb(255_255_255/0.06)_0px,rgb(255_255_255/0.06)_1px,transparent_1px,transparent_64px),repeating-linear-gradient(0deg,rgb(255_255_255/0.06)_0px,rgb(255_255_255/0.06)_1px,transparent_1px,transparent_64px)]"
         />
       )}
+      </ParallaxBg>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
 
       <Container className="relative z-10 py-16">
@@ -46,7 +50,7 @@ export function DivisionHero({ division }: { division: Division }) {
             </p>
           )}
           <h1 className="mt-4 max-w-2xl font-display text-4xl uppercase leading-[1.05] sm:text-5xl md:text-6xl">
-            {division.resumen}
+            <SplitWords text={division.resumen} delay={0.15} />
           </h1>
           <p className="mt-4 max-w-xl text-base text-base/80 sm:text-lg">
             {division.descripcionCorta}

@@ -9,6 +9,8 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { ParallaxBg } from "@/components/ui/ParallaxBg";
+import { SplitWords } from "@/components/ui/SplitWords";
 import { PortafolioCard } from "@/components/portafolio/PortafolioCard";
 
 export function generateStaticParams() {
@@ -53,14 +55,16 @@ export default async function ProyectoPage({
   return (
     <>
       <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-ink text-base">
-        <Image
-          src={proyecto.imagen.src}
-          alt={proyecto.imagen.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-70"
-        />
+        <ParallaxBg>
+          <Image
+            src={proyecto.imagen.src}
+            alt={proyecto.imagen.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-70"
+          />
+        </ParallaxBg>
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
 
         <Container className="relative z-10 py-16">
@@ -74,8 +78,10 @@ export default async function ProyectoPage({
               </Link>
             ) : null}
             <h1 className="mt-4 max-w-2xl font-display text-3xl uppercase leading-tight sm:text-4xl md:text-5xl">
-              {proyecto.cliente ? `${proyecto.cliente} — ` : ""}
-              {proyecto.titulo}
+              <SplitWords
+                text={`${proyecto.cliente ? `${proyecto.cliente} — ` : ""}${proyecto.titulo}`}
+                delay={0.15}
+              />
             </h1>
           </FadeIn>
         </Container>
