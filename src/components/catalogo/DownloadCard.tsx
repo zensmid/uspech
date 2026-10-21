@@ -37,15 +37,12 @@ export function DownloadCard({
           Descargar PDF <span aria-hidden="true" className="animate-bounce">↓</span>
         </Button>
       ) : (
-        <div>
-          <span
-            aria-disabled
-            className={`${buttonBaseClasses} ${buttonVariantClasses.ghost} cursor-not-allowed text-ink-faint`}
-          >
-            Disponible próximamente
-          </span>
-          <p className="mt-2 font-mono text-xs text-ink-faint">{expectedPath}</p>
-        </div>
+        <span
+          aria-disabled
+          className={`${buttonBaseClasses} ${buttonVariantClasses.ghost} cursor-not-allowed text-ink-faint`}
+        >
+          Disponible próximamente
+        </span>
       )}
     </div>
     </Tilt>

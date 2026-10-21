@@ -14,20 +14,27 @@ export function HeroCarousel({
   intervalMs?: number;
 }) {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion || slides.length <= 1) return;
+    if (prefersReducedMotion || paused || slides.length <= 1) return;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
     }, intervalMs);
     return () => clearInterval(id);
-  }, [slides.length, intervalMs, prefersReducedMotion]);
+  }, [slides.length, intervalMs, prefersReducedMotion, paused]);
 
   const current = slides[index];
 
   return (
-    <>
+    <div
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      className="absolute inset-0"
+    >
       <AnimatePresence initial={false}>
         <motion.div
           key={current.src}
@@ -49,20 +56,25 @@ export function HeroCarousel({
       </AnimatePresence>
 
       {slides.length > 1 ? (
-        <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+        <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-1">
           {slides.map((slide, i) => (
             <button
               key={slide.src}
               type="button"
               aria-label={`Mostrar imagen: ${slide.caption ?? slide.alt}`}
+              aria-current={i === index}
               onClick={() => setIndex(i)}
-              className={`h-1.5 rounded-full transition-all ${
-                i === index ? "w-6 bg-base" : "w-1.5 bg-base/40"
-              }`}
-            />
+              className="flex h-11 w-8 items-center justify-center"
+            >
+              <span
+                className={`h-1.5 rounded-full transition-all ${
+                  i === index ? "w-6 bg-base" : "w-1.5 bg-base/40"
+                }`}
+              />
+            </button>
           ))}
         </div>
       ) : null}
-    </>
+    </div>
   );
 }

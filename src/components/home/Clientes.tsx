@@ -21,7 +21,6 @@ export function Clientes() {
           title="+350 clientes en toda la República"
           align="center"
         />
-
       </Container>
       <div className="relative mt-10 space-y-4">
         {[clientesDestacados, [...clientesDestacados].reverse()].map((fila, n) => (
@@ -37,11 +36,6 @@ export function Clientes() {
           </Marquee>
         ))}
       </div>
-      <Container className="relative">
-        <p className="mt-6 text-center text-xs text-ink-faint">
-          Logos reales en alta resolución: [PENDIENTE] — ver ASSETS.md
-        </p>
-      </Container>
     </section>
   );
 }

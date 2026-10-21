@@ -49,7 +49,10 @@ export function Divisiones() {
                     aspect="aspect-[16/7]"
                   />
                 )}
-                <p className="mt-4 text-base text-ink-soft">{division.resumen}</p>
+                <p className="mt-4 font-display text-xl uppercase text-ink">
+                  {division.nombre}
+                </p>
+                <p className="mt-2 text-base text-ink-soft">{division.resumen}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
                   Ver división
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
