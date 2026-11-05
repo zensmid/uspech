@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, type ReactNode } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { divisiones } from "@/content/divisiones";
 import { enviarContacto, type ContactoState } from "@/app/contacto/actions";
@@ -170,6 +171,16 @@ export function ContactoForm() {
           {state.error}
         </motion.p>
       ) : null}
+
+      <Fila>
+        <p className="text-xs text-ink-soft">
+          Al enviar aceptas nuestro{" "}
+          <Link href="/aviso-de-privacidad" className="underline hover:text-ink">
+            aviso de privacidad
+          </Link>
+          .
+        </p>
+      </Fila>
 
       <Fila>
         <motion.button

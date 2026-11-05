@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { HydrationFlag } from "@/components/ui/HydrationFlag";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const anton = Anton({
@@ -19,6 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Uspech — Agencia de publicidad 360° en Mérida",
     template: "%s · Uspech",
