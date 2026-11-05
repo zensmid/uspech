@@ -65,3 +65,16 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * Respaldo si el JavaScript no carga (o tarda más de 4 s): las animaciones de
+ * entrada dejan el contenido invisible hasta hidratar, así que aquí lo
+ * forzamos visible. Ver el script en layout.tsx y HydrationFlag.
+ */
+html.no-hydrate [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  stroke-dasharray: none !important;
+  stroke-dashoffset: 0 !important;
+}

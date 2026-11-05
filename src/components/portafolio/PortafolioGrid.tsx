@@ -47,6 +47,7 @@ export function PortafolioGrid({ proyectos }: { proyectos: Proyecto[] }) {
           {visibles.map((proyecto, index) => (
             <motion.div
               key={proyecto.slug}
+              data-reveal
               layout
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

@@ -137,6 +137,7 @@ function VistaEscritorio() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={actual}
+                data-reveal
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -24 }}

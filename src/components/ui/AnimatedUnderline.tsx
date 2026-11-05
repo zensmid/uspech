@@ -10,6 +10,7 @@ export function AnimatedUnderline({ className = "" }: { className?: string }) {
       className={`h-2 w-16 overflow-visible ${className}`}
     >
       <motion.path
+        data-reveal
         d="M2 5.5C14 2 24 2 32 4.5C40 7 50 7 62 3"
         fill="none"
         stroke="currentColor"

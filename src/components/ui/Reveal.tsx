@@ -15,6 +15,7 @@ export function Reveal({
 }) {
   return (
     <motion.div
+      data-reveal
       className={className}
       initial={{ clipPath: "inset(0 0 100% 0 round 16px)" }}
       whileInView={{ clipPath: "inset(0 0 0% 0 round 16px)" }}

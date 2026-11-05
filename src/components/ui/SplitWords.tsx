@@ -26,6 +26,7 @@ export function SplitWords({
           className="inline-block overflow-hidden pb-[0.08em] align-bottom"
         >
           <motion.span
+            data-reveal
             className="inline-block"
             initial={{ y: "110%", rotate: 4 }}
             animate={{ y: 0, rotate: 0 }}
