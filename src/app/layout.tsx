@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { MetaPixel } from "@/components/layout/MetaPixel";
 import { HydrationFlag } from "@/components/ui/HydrationFlag";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
       </head>
       <body className="flex min-h-full flex-col font-sans">
+        <MetaPixel />
         <HydrationFlag />
         <ScrollProgress />
         <Header />
