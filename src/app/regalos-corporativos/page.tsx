@@ -30,8 +30,10 @@ export const metadata: Metadata = {
     locale: "es_MX",
     images: [
       {
-        url: "/assets/portafolio/ceal-caja-navidad-suhissa.jpg",
-        alt: "Caja de regalo corporativo navideña personalizada por Uspech",
+        url: "/regalos/og-regalos-corporativos.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Regalos corporativos con tu logo — Uspech 360°",
       },
     ],
   },
@@ -118,13 +120,13 @@ export default function RegalosCorporativosPage() {
         <ul className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
           {categorias.map((c) => (
             <li key={c.slug} className={`${card} flex flex-col`}>
-              <div className="relative aspect-square border-b-4 border-black bg-[#f1efe9]">
+              <div className="relative aspect-[3/2] border-b-4 border-black bg-[#f1efe9]">
                 {existeImagen(c.imagen) ? (
                   <Image
                     src={`/regalos/${c.imagen}`}
                     alt={c.nombre}
                     fill
-                    sizes="(min-width: 1024px) 320px, 45vw"
+                    sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 46vw"
                     className="object-cover"
                   />
                 ) : (
