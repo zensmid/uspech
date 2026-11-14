@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/portafolio",
     "/catalogo",
     "/contacto",
+    "/regalos-corporativos",
     "/aviso-de-privacidad",
     ...divisiones.map((d) => `/servicios/${d.slug}`),
     ...proyectos.map((p) => `/portafolio/${p.slug}`),

@@ -1,11 +1,16 @@
 "use server";
 
+import { cookies, headers } from "next/headers";
+import { after } from "next/server";
 import { Resend } from "resend";
+import { clientIp, readCookie, resolveFbc, sendCapiEvent } from "@/lib/meta-capi";
+import { siteUrl } from "@/lib/site";
 import { divisiones } from "@/content/divisiones";
 
 export type ContactoState = {
   ok: boolean;
   error?: string;
+  eventId?: string;
   valores?: Record<string, string>;
 };
 
@@ -89,5 +94,26 @@ export async function enviarContacto(
       valores,
     };
   }
-  return { ok: true };
+
+  // Lead por CAPI con el mismo event_id que dispara el Pixel en el navegador.
+  const eventId = campo(formData, "event_id").slice(0, 100);
+  if (eventId) {
+    const h = await headers();
+    const cookieHeader = (await cookies()).toString();
+    const sourceUrl = h.get("referer") ?? `${siteUrl}/contacto`;
+    after(() =>
+      sendCapiEvent({
+        eventName: "Lead",
+        eventId,
+        sourceUrl,
+        ip: clientIp(h),
+        userAgent: h.get("user-agent") ?? undefined,
+        fbp: readCookie(cookieHeader, "_fbp"),
+        fbc: resolveFbc(cookieHeader, sourceUrl),
+        email: valores.correo,
+        phone: valores.telefono,
+      })
+    );
+  }
+  return { ok: true, eventId };
 }

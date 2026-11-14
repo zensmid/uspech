@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState, type ReactNode } from "react";
+import { useActionState, useEffect, type ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { divisiones } from "@/content/divisiones";
 import { enviarContacto, type ContactoState } from "@/app/contacto/actions";
+import { newEventId, pixelTrack } from "@/lib/meta";
 import { buttonBaseClasses, buttonVariantClasses } from "@/components/ui/Button";
 
 const inputClasses =
@@ -61,6 +62,17 @@ export function ContactoForm() {
   );
   const v = state.valores ?? {};
 
+  // El id se genera en el cliente al enviar; el servidor lo usa para el Lead por CAPI.
+  const conEventId = (formData: FormData) => {
+    const id = newEventId();
+    formData.set("event_id", id);
+    return formAction(formData);
+  };
+
+  useEffect(() => {
+    if (state.ok && state.eventId) pixelTrack("Lead", {}, state.eventId);
+  }, [state.ok, state.eventId]);
+
   if (state.ok) {
     return (
       <motion.div
@@ -102,7 +114,7 @@ export function ContactoForm() {
 
   return (
     <motion.form
-      action={formAction}
+      action={conEventId}
       className="grid gap-5"
       variants={lista}
       initial="hidden"
