@@ -3,31 +3,14 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Marquee } from "@/components/ui/Marquee";
+import { catalogos } from "@/content/catalogos";
 import { DownloadCard } from "@/components/catalogo/DownloadCard";
 
 export const metadata: Metadata = {
   title: "Catálogo",
   description:
-    "Descarga el catálogo de artículos promocionales CEAL y el brochure general de Uspech.",
+    "Descarga los catálogos de artículos promocionales y regalos corporativos CEAL.",
 };
-
-const descargas = [
-  {
-    titulo: "Catálogo CEAL",
-    descripcion:
-      "Artículos promocionales y regalos corporativos: USB, termos, vasos y más, listos para personalizar con tu marca.",
-    expectedPath: "/assets/pdf/catalogo-ceal.pdf",
-    disponible: true,
-    preview: "/assets/pdf/previews/catalogo-ceal.png",
-  },
-  {
-    titulo: "Brochure Uspech",
-    descripcion:
-      "Quiénes somos, nuestras divisiones e infraestructura propia, en un solo documento.",
-    expectedPath: "/assets/pdf/brochure-uspech.pdf",
-    disponible: false,
-  },
-];
 
 export default function CatalogoPage() {
   return (
@@ -37,7 +20,7 @@ export default function CatalogoPage() {
         {Array.from({ length: 6 }, (_, i) => (
           <span key={i} className="flex items-center">
             <span className="px-6 font-display text-5xl uppercase leading-none sm:text-7xl">
-              Catálogos y brochures
+              Catálogos
             </span>
             <span className="text-3xl text-accent">✦</span>
           </span>
@@ -49,13 +32,19 @@ export default function CatalogoPage() {
         <SectionTitle
           eyebrow="Catálogo"
           title="Descarga nuestro material"
-          description="Consulta el catálogo de CEAL o descarga el brochure general de Uspech."
+          description="Consulta los catálogos de CEAL, listos para cotizar."
           align="center"
         />
-        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
-          {descargas.map((item, index) => (
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {catalogos.map((item, index) => (
             <FadeIn key={item.titulo} delay={index * 0.05}>
-              <DownloadCard {...item} />
+              <DownloadCard
+                titulo={item.titulo}
+                descripcion={item.descripcion}
+                expectedPath={item.src}
+                preview={item.preview}
+                disponible
+              />
             </FadeIn>
           ))}
         </div>
